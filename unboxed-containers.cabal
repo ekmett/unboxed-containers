@@ -1,0 +1,33 @@
+name:		    unboxed-containers
+version:	    0.0.0
+license:	    BSD3
+license-file:   LICENSE
+author:		    Edward A. Kmett
+maintainer:	    Edward A. Kmett <ekmett@gmail.com>
+stability:	    experimental
+homepage:	    http://comonad.com/reader
+category:	    Data
+synopsis:	    Self-optimizing unboxed sets using view patterns and data families
+description:    Self-optimizing unboxed sets using view patterns and data families
+copyright:      (c) 2009 Edward A. Kmett
+build-type:     Simple
+cabal-version:  >=1.2
+
+library
+  build-depends: 
+    base >= 4 && < 4.2,
+    containers >= 0.2.0.0 && < 0.3.0.0
+  exposed-modules:
+    Data.Set.Unboxed
+  ghc-options: -Wall -fno-warn-overlapping-patterns
+
+executable unboxed-set-benchmark
+  main-is: Benchmark.hs
+  build-depends:
+    base >= 4 && < 4.2,
+    random >= 1.0.0.1 && < 1.1.0.0,
+    containers >= 0.2.0.0 && < 0.3.0.0,
+    timeit >= 0.9.0 && < 1.0
+  other-modules:
+    Data.Set.Unboxed
+  ghc-options: -fno-warn-overlapping-patterns
