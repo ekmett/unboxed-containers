@@ -19,7 +19,7 @@ library
     containers >= 0.2.0.0 && < 0.3.0.0
   exposed-modules:
     Data.Set.Unboxed
-  ghc-options: -Wall -fno-warn-overlapping-patterns
+  ghc-options: -fno-warn-overlapping-patterns
 
 executable unboxed-set-benchmark
   main-is: Benchmark.hs

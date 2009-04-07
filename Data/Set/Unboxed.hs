@@ -37,6 +37,7 @@
 -- equality.
 --
 -- Modified from "Data.Set" to use type families for automatic unboxing
+--
 -----------------------------------------------------------------------------
 -}
 
