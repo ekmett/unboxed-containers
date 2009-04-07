@@ -13,6 +13,9 @@ copyright:      (c) 2009 Edward A. Kmett
 build-type:     Simple
 cabal-version:  >=1.2
 
+data-files: 
+  instances.pl
+
 library
   build-depends: 
     base >= 4 && < 4.2,
