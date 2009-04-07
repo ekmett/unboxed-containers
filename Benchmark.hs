@@ -21,7 +21,7 @@ instance (Random x, Random y) => Random (x,y) where
 
 main = do
     let g  = mkStdGen 42
-        rs :: [(Int,Int)]
+        rs :: [Int]
         rs = take n (randoms g)
     forceList "Generating random numbers" rs
     testB rs
