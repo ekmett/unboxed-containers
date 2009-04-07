@@ -1,5 +1,5 @@
 name:		    unboxed-containers
-version:	    0.0.1
+version:	    0.0.2
 license:	    BSD3
 license-file:   LICENSE
 author:		    Edward A. Kmett
@@ -15,6 +15,7 @@ cabal-version:  >=1.2
 
 data-files: 
   instances.pl
+    Data/Set/UnboxedInstances.hs
 
 library
   build-depends: 

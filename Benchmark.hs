@@ -1,13 +1,14 @@
 import System.Random
 import System.TimeIt
 import Control.Exception (evaluate)
+import Control.Parallel.Strategies
 
 import qualified Data.Set as S
 import qualified Data.IntSet as I
 import qualified Data.Set.Unboxed as U
 
 eval m x = putStr (m ++ " ") >> timeIt (evaluate x)
-forceList m = eval m . foldr seq ()
+forceList m l = eval m (l `using` parList rnf)
 
 n = 2^18
 
@@ -18,6 +19,28 @@ instance (Random x, Random y) => Random (x,y) where
     randomR ((la,lb),(ha,hb)) g = ((a,b),g'') where
         (a,g') = randomR (la,ha) g
         (b,g'') = randomR (lb,hb) g'
+
+instance (Random x, Random y,Random z) => Random (x,y,z) where
+    random g = ((a,b,c),g''') where
+        (a,g') = random g
+        (b,g'') = random g'
+        (c,g''') = random g''
+    randomR ((la,lb,lc),(ha,hb,hc)) g = ((a,b,c),g''') where
+        (a,g') = randomR (la,ha) g
+        (b,g'') = randomR (lb,hb) g'
+        (c,g''') = randomR (lc,hc) g''
+
+instance (Random w, Random x, Random y,Random z) => Random (w,x,y,z) where
+    random g = ((a,b,c,d),g'''') where
+        (a,g') = random g
+        (b,g'') = random g'
+        (c,g''') = random g''
+        (d,g'''') = random g'''
+    randomR ((la,lb,lc,ld),(ha,hb,hc,hd)) g = ((a,b,c,d),g'''') where
+        (a,g') = randomR (la,ha) g
+        (b,g'') = randomR (lb,hb) g'
+        (c,g''') = randomR (lc,hc) g''
+        (d,g'''') = randomR (ld,hd) g'''
 
 main = do
     let g  = mkStdGen 42
