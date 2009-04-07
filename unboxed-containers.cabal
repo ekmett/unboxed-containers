@@ -19,7 +19,7 @@ library
     containers >= 0.2.0.0 && < 0.3.0.0
   exposed-modules:
     Data.Set.Unboxed
-  ghc-options: -fno-warn-overlapping-patterns
+  ghc-options: -fno-warn-overlapping-patterns -O2 -fdicts-cheap
 
 executable unboxed-set-benchmark
   main-is: Benchmark.hs
@@ -30,4 +30,4 @@ executable unboxed-set-benchmark
     timeit >= 0.9.0 && < 1.0
   other-modules:
     Data.Set.Unboxed
-  ghc-options: -fno-warn-overlapping-patterns
+  ghc-options: -fno-warn-overlapping-patterns -O2 -fdicts-cheap
