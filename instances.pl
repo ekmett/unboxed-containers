@@ -6,6 +6,7 @@ sub poly ($$) {
     my ($type,$var) = @_;
     return ("Boxed $var","(Boxed $var)","(Boxed $var)",$var) if $type eq "Boxed";
     return ("Complex $1","(Complex $1)","{-# UNPACK #-} !(Complex $1)",$var) if $type =~ m/Complex(.*)/;
+    return ($type,$type,"!$type", $var) if $type eq "Integer";
     return ($type,$type,"{-# UNPACK #-} !$type",$var);
 }
 

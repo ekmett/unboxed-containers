@@ -8,7 +8,7 @@ import qualified Data.IntSet as I
 import qualified Data.Set.Unboxed as U
 
 eval m x = putStr (m ++ " ") >> timeIt (evaluate x)
-forceList m l = eval m (l `using` parList rnf)
+forceList m l = eval m (l `using` parList rdeepseq)
 
 n = 2^18
 
