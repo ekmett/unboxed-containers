@@ -13,6 +13,7 @@ description:    Self-optimizing unboxed sets using view patterns and data famili
 copyright:      (c) 2009 Edward A. Kmett
 build-type:     Simple
 cabal-version:  >=1.6
+
 extra-source-files: instances.pl .travis.yml
 
 source-repository head
