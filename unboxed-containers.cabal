@@ -1,18 +1,19 @@
 name:           unboxed-containers
-version:        0.0.2.4
+version:        0.0.2.5
 license:        BSD3
 license-file:   LICENSE
 author:         Edward A. Kmett
 maintainer:     Edward A. Kmett <ekmett@gmail.com>
 stability:      experimental
 homepage:       http://github.com/ekmett/unboxed-containers
+bug-reports:    http://github.com/ekmett/unboxed-containers/issues
 category:       Data
 synopsis:       Self-optimizing unboxed sets using view patterns and data families
 description:    Self-optimizing unboxed sets using view patterns and data families
 copyright:      (c) 2009 Edward A. Kmett
 build-type:     Simple
 cabal-version:  >=1.6
-extra-source-files: instances.pl
+extra-source-files: instances.pl .travis.yml
 
 source-repository head
   type: git
